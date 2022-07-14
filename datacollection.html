@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="./stl_data.css">
+    <title>I am ready to help</title>
+</head>
+<body>
+
+    <div class="sticky-top">
+        <div class="topnav">
+          <div class="nav">
+              <a class="active" href="./index.html">Home</a>
+              <a href="./problem.html" target="_blank">Call Xavier</a>
+              <a href="./news.html">News</a>
+              <a href="#merch">Merchandise</a>
+              <a href="#about">About</a>
+          </div>
+      </div>
+
+      
+    <div class="container py-5">
+        <div class="row">
+            <div class="box">
+            <div class="col-lg-5 col-md-8 mx-auto shadow-lg p-3 mb-5 bg-white rounded border bg-white p-5 rounded">
+                <h2 class="text-center fw-bold mb-3">Tell us more about the situation...</h2>
+                <form id="google-sheet">
+                    <div class="div" id="form_alerts"></div>
+                    <div class="form-group mb-3">
+                        <label for="name" class="form-label">So, how's your name ?</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="email" class="form-label">Can we have your E-Mail ID ..</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your Email" required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="message" class="form-label">So how is the situation...</label>
+                        <textarea type="message" id="message" name="message" class="form-control" placeholder="Enter the message" rows="5" required></textarea>
+                    </div>
+                    <div>
+                        <button class="btn btn-success me-2" type="submit">Help Me</button>
+                        <button class="btn btn-danger" type="reset">Reset form</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzXfn6MEhBVDrJMbrLIfUco5zftEnSJ3XhhGD6Yh-n6w-15Kw7cYwPx9KXC_IWAOpN-/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => $("#form_alerts").html("<div class='alert alert-success'>Message sent Successfully. We'll be reaching you soon... </div>"))
+            .catch(error => $("#form_alerts").html("<div class='alert alert-danger'>Message not sent. We are currently facing some issues...</div>"))
+        })
+      </script>
+
+<section class="footer">
+    <footer class="container mt-4">
+      <div class=”row”>
+      <div class=”col”>
+        <br><br>  
+      <p class=”text-center”>Designed by <a href="index.html">Team Infinity</a>.</p>
+      </div>
+      </div>
+     </footer>
+     </section>
+</body>
+</html>

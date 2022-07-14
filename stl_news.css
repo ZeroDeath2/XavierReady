@@ -1,0 +1,49 @@
+body{
+    background-image: url(./wall4.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.topnav  {
+    display: flex;
+    justify-content:center;
+    background-color: rgba(51, 51, 51, 0);
+    overflow: hidden;
+    font-family:'Times New Roman', Times, serif;
+  }
+
+  .topnav a {
+
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    float: left;
+    color: #f2f2f2;
+    font-size: xx-large;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    color: rgba(132, 50, 255, 0.758);
+  }
+
+  .topnav a.active {
+    color: rgb(255, 255, 255);
+  }
+  .caro{
+    width: 75%;
+    height: 500px;
+    margin-left: 12%;
+    margin-top: 100px;
+  }
+  .footer{
+    background-color: #2d2d2d;
+    color: #f2f2f2;
+    height: 150px;
+  }
+  .review1{
+    background-image: url(./review1.png);
+  }
+  .carousel-item{
+    margin-left:250px;
+  }
